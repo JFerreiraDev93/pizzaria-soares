@@ -220,3 +220,33 @@ footer.site a{color:#fff}
 .doc p{color:var(--muted);margin-bottom:12px}
 .doc a{color:var(--tomato)}
 @media print{.top,.order,.map,.tabs{display:none}}
+
+/* ---- Tom escuro: secções alternadas em castanho (logo + cartão de horário) ---- */
+:root{--deep:#1f1510;--deep-2:#2c1e16;--on-dark:#f3ebe2;--on-dark-muted:#c7b6a6;--line-dark:rgba(243,235,226,.14)}
+body{background:var(--flour)}
+.top{background:rgba(31,21,16,.92);border-bottom-color:var(--line-dark);color:var(--on-dark)}
+.links a:hover{background:rgba(255,255,255,.08)}
+.menu-btn{background:transparent;border-color:var(--line-dark);color:var(--on-dark)}
+@media (max-width:900px){.links{background:var(--deep);border-bottom-color:var(--line-dark)}.links a{border-bottom-color:var(--line-dark)}}
+.hero,.facts{background:var(--deep);color:var(--on-dark)}
+.hero h1{color:#fff}
+.hero .lead{color:var(--on-dark-muted)}
+.hero .btn-ghost{color:#fff}
+.hero .btn-ghost:hover{background:#fff;color:var(--deep);border-color:#fff}
+.plates figure{background:var(--deep-2)}
+.facts{border-block-color:var(--line-dark)}
+.facts li + li{border-left-color:var(--line-dark)}
+.facts li:nth-child(n+3){border-top-color:var(--line-dark)}
+.facts span{color:var(--on-dark-muted)}
+.facts b{color:#fff}
+#fotos{background:var(--deep-2);color:var(--on-dark)}
+#fotos .sec-sub,#fotos figcaption span{color:var(--on-dark-muted)}
+#fotos .ig{color:#fff}
+.voices{background:var(--bark)}
+.voices p.about{color:#f1e6da}
+.visit{background:var(--flour)}
+.hours li.today{background:#fff}
+.chips span{background:#fff}
+.map{background:#fff}
+footer.site{background:var(--deep)}
+@media (max-width:800px){.facts li:nth-child(3){border-left:0}}
