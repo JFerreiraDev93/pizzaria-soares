@@ -6,7 +6,7 @@
 <title>Pizzaria Soares · Pizzas, hambúrgueres e francesinhas em Penafiel</title>
 <meta name="description" content="Pizzaria, snack-bar e hamburgueria artesanal em Cabeça Santa, Penafiel. Pizzas de forno, hambúrgueres, francesinhas e prato do dia. Entregas ao domicílio e takeaway: 913 260 657.">
 <link rel="canonical" href="https://jferreiradev93.github.io/pizzaria-soares/">
-<meta name="theme-color" content="#1f1510">
+<meta name="theme-color" content="#100d0b">
 <meta property="og:type" content="restaurant">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Pizzaria Soares">
@@ -55,97 +55,94 @@
 <a class="skip" href="#ementa">Saltar para a ementa</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#inicio"><img src="img/logo.jpg" alt="" width="44" height="44"><b>Pizzaria Soares</b></a>
+    <a class="brand" href="#inicio"><img src="img/logo.jpg" alt="" width="44" height="44"><span><b>Pizzaria Soares</b><small>Cabeça Santa · Penafiel</small></span></a>
     <nav class="links" id="navLinks" aria-label="Secções">
-      <a href="#ementa">Ementa</a><a href="#fotos">Fotos</a><a href="#clientes">Clientes</a><a href="#visitar">Horário e morada</a>
+      <a href="#ementa">Ementa</a><a href="#favoritos">Favoritos</a><a href="#clientes">Clientes</a><a href="#visitar">Horário e morada</a>
     </nav>
-    <a class="btn btn-call" href="tel:+351913260657" aria-label="Ligar 913 260 657"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>913 260 657</span></a>
+    <a class="btn btn-gold btn-sm" href="tel:+351913260657" aria-label="Ligar 913 260 657"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>913 260 657</span></a>
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </header>
 
 <main id="inicio" tabindex="-1">
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <h1><span class="w">Pizza de forno,</span><span class="w">hambúrguer</span><span class="w">e francesinha.</span></h1>
-        <p class="lead">Em Cabeça Santa, Penafiel. Prato do dia à semana, carta completa ao fim de semana e entregas em casa.</p>
-        <p class="status" data-status hidden></p>
-        <div class="actions">
-          <a class="btn btn-call" href="tel:+351913260657"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Ligar para encomendar</a>
-          <a class="btn btn-ghost" href="#ementa">Ver a ementa</a>
-        </div>
+    <picture class="hero-bg"><source srcset="img/pizza-hero.webp" type="image/webp"><img src="img/pizza-hero.jpg" alt="" width="591" height="740" fetchpriority="high"></picture>
+    <div class="wrap hero-in">
+      <p class="kicker">Snack-bar · Pizzaria · Hamburgueria artesanal</p>
+      <h1>Pizza de forno,<br>hambúrguer <em>&amp;</em><br>francesinha.</h1>
+      <p class="lead">Feito na hora em Cabeça Santa, Penafiel. Prato do dia à semana, travessas ao fim de semana e entregas em casa.</p>
+      <p class="status" data-status hidden></p>
+      <div class="actions">
+        <a class="btn btn-gold" href="tel:+351913260657"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Ligar para encomendar</a>
+        <a class="btn btn-line" href="#ementa">Ver a ementa</a>
       </div>
-      <div class="plates">
-        <figure class="big"><picture><source srcset="img/pizza-hero.webp" type="image/webp"><img src="img/pizza-hero.jpg" alt="Pizza com fiambre, cogumelos e azeitonas" width="591" height="740" fetchpriority="high"></picture><figcaption>21 pizzas, desde 9,50 €</figcaption></figure>
-        <figure><picture><source srcset="img/burger-ovo.webp" type="image/webp"><img src="img/burger-ovo.jpg" alt="Hambúrguer com ovo estrelado e bacon" width="473" height="540"></picture><figcaption>Barcelona</figcaption></figure>
-        <figure><picture><source srcset="img/francesinha.webp" type="image/webp"><img src="img/francesinha.jpg" alt="Francesinha com ovo, molho e batata frita" width="490" height="613"></picture><figcaption>Francesinha</figcaption></figure>
+    </div>
+    <ul class="wrap facts" aria-label="Serviços">
+      <li><b>Entregas</b><span>ao domicílio</span></li>
+      <li><b>Takeaway</b><span>encomende e levante</span></li>
+      <li><b>Parque</b><span>no Edifício Alegria</span></li>
+      <li><b>Menu infantil</b><span>e espaço para carrinhos</span></li>
+    </ul>
+  </section>
+
+  <section class="sec dark" id="favoritos" aria-labelledby="fav-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Os mais pedidos</p>
+        <h2 class="sec-title" id="fav-title">Saído do forno e da chapa</h2>
+      </div>
+      <div class="favs">
+        <a class="fav fav-big" href="#ementa" data-cat="Pizzas"><picture><source srcset="img/pizza-frango.webp" type="image/webp"><img src="img/pizza-frango.jpg" alt="Pizza de forno com borda alta" width="473" height="592" loading="lazy"></picture><span class="cap"><b>Pizzas de forno</b><i>21 sabores, 3 tamanhos</i><em>desde 9,50 €</em></span></a>
+        <a class="fav" href="#ementa" data-cat="Hambúrgueres"><picture><source srcset="img/burger-ovo.webp" type="image/webp"><img src="img/burger-ovo.jpg" alt="Hambúrguer Barcelona com ovo estrelado e bacon" width="473" height="540" loading="lazy"></picture><span class="cap"><b>Barcelona</b><i>140 g de novilho, ovo, bacon</i><em>12,00 €</em></span></a>
+        <a class="fav" href="#ementa" data-cat="Francesinhas"><picture><source srcset="img/francesinha.webp" type="image/webp"><img src="img/francesinha.jpg" alt="Francesinha com ovo, molho e batata frita" width="490" height="613" loading="lazy"></picture><span class="cap"><b>Francesinha</b><i>com batata e ovo</i><em>13,00 €</em></span></a>
+        <a class="fav" href="#ementa" data-cat="Hambúrgueres"><picture><source srcset="img/burger.webp" type="image/webp"><img src="img/burger.jpg" alt="Hambúrguer Lisboa com cheddar, bacon e tomate" width="490" height="613" loading="lazy"></picture><span class="cap"><b>Lisboa</b><i>cheddar, bacon, alface, tomate</i><em>11,50 €</em></span></a>
+        <a class="fav" href="https://www.instagram.com/pizzaria__soares/" target="_blank" rel="noopener"><picture><source srcset="img/batatas.webp" type="image/webp"><img src="img/batatas.jpg" alt="Batata frita com bacon, queijo e molhos" width="473" height="592" loading="lazy"></picture><span class="cap"><b>Mais no Instagram</b><i>@pizzaria__soares</i><em>Ver fotos ↗</em></span></a>
       </div>
     </div>
   </section>
 
-  <section class="facts" aria-label="Serviços">
-    <ul class="wrap">
-      <li><b>Entregas ao domicílio</b><span>Peça por telefone</span></li>
-      <li><b>Takeaway</b><span>Encomende e levante</span></li>
-      <li><b>Estacionamento</b><span>Parque no Edifício Alegria</span></li>
-      <li><b>Crianças bem-vindas</b><span>Menu infantil e espaço para carrinhos</span></li>
-    </ul>
-  </section>
-
-  <section class="sec menu" id="ementa" aria-labelledby="menu-title">
+  <section class="sec paper" id="ementa" aria-labelledby="menu-title">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 class="sec-title" id="menu-title">Ementa</h2>
+      <div class="sec-head center">
+        <p class="eyebrow">Carta da casa</p>
+        <h2 class="sec-title orn" id="menu-title">Ementa</h2>
         <p class="sec-sub">Preços em euros, com IVA. A ementa pode mudar; na dúvida, ligue.</p>
       </div>
-      <div class="menu-layout">
-        <div class="tabs" role="tablist" aria-label="Categorias da ementa" id="tabs"></div>
-        <div class="board" id="board" role="tabpanel" tabindex="0"></div>
-      </div>
+      <div class="tabs" role="tablist" aria-label="Categorias da ementa" id="tabs"></div>
+      <div class="board" id="board" role="tabpanel" tabindex="0"></div>
       <noscript><p>Para ver a ementa ative o JavaScript ou ligue 913 260 657.</p></noscript>
       <p class="menu-foot">Tem alguma alergia ou intolerância? Diga-nos ao encomendar. A lista de alergénios está disponível no restaurante.</p>
     </div>
   </section>
 
-  <section class="sec" id="fotos" aria-labelledby="fotos-title">
+  <section class="sec dark voices" id="clientes" aria-labelledby="clientes-title">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="sec-title" id="fotos-title">Saído da cozinha</h2>
-        <p class="sec-sub">Pratos da casa, fotografados no restaurante.</p>
-      </div>
-      <div class="reel">
-        <figure><picture><source srcset="img/burger.webp" type="image/webp"><img src="img/burger.jpg" alt="Hambúrguer com cheddar, bacon e tomate" width="490" height="613" loading="lazy"></picture><figcaption>Hambúrguer Lisboa<span>140 g de novilho, cheddar, bacon</span></figcaption></figure>
-        <figure><picture><source srcset="img/pizza-frango.webp" type="image/webp"><img src="img/pizza-frango.jpg" alt="Pizza de forno com borda alta" width="473" height="592" loading="lazy"></picture><figcaption>Pizza de forno<span>Massa fina, borda estaladiça</span></figcaption></figure>
-        <figure><picture><source srcset="img/batatas.webp" type="image/webp"><img src="img/batatas.jpg" alt="Batata frita com bacon, queijo e molhos" width="473" height="592" loading="lazy"></picture><figcaption>Batata carregada<span>Para partilhar</span></figcaption></figure>
-      </div>
-      <a class="ig" href="https://www.instagram.com/pizzaria__soares/" target="_blank" rel="noopener">Mais fotos no Instagram</a>
-    </div>
-  </section>
-
-  <section class="sec voices" id="clientes" aria-labelledby="clientes-title">
-    <div class="wrap grid">
-      <div>
+        <p class="eyebrow">Quem cá vem</p>
         <h2 class="sec-title" id="clientes-title">Comida caseira, servida com tempo.</h2>
-        <p class="about">Uma equipa jovem, um espaço limpo e um parque à porta. Ao almoço, prato do dia. Ao fim de semana, bacalhau, cabrito e cozido à travessa.</p>
+        <p class="sec-sub">Uma equipa jovem, um espaço limpo e um parque à porta. Ao almoço, prato do dia. Ao fim de semana, bacalhau, cabrito e cozido à travessa.</p>
         <!-- TODO: quando houver os dados do Google, acrescentar aqui a média e o nº de avaliações -->
       </div>
       <div class="quotes">
-        <blockquote class="quote lead-q"><p>Atendimento cinco estrelas, comida muito bem confecionada.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Laurentina R., no Google</footer></blockquote>
-          <blockquote class="quote"><p>Fui hoje a primeira vez e fiquei deliciado com o sabor, a maneira como somos servidos, o estabelecimento, a simpatia. Tudo ótimo.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>João R., no Google</footer></blockquote>
-          <blockquote class="quote"><p>Tendo uma bebé, disponibilizaram desde logo um sítio onde se pode estar à vontade com o carrinho, sem ser necessário pedir.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Nee S., no Google</footer></blockquote>
-          <blockquote class="quote"><p>Não tínhamos reservado mesa no dia dos namorados e, apesar de estarem com as mesas todas reservadas, serviram à mesma.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Andreia S., no Google</footer></blockquote>
-          <blockquote class="quote"><p>Bom ambiente, boa comida, qualidade e saborosa, preço acessível. Adorei os hambúrgueres.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Kevin S., no Google</footer></blockquote>
-        <a class="more-reviews" href="https://www.google.com/maps/search/?api=1&query=Pizzaria+Soares+Cabe%C3%A7a+Santa+Penafiel" target="_blank" rel="noopener">Ler todas as avaliações no Google</a>
+        <blockquote class="quote big-q"><p>Atendimento cinco estrelas, comida muito bem confecionada.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Laurentina R., no Google</footer></blockquote>
+        <blockquote class="quote"><p>Fui hoje a primeira vez e fiquei deliciado com o sabor, a maneira como somos servidos, o estabelecimento, a simpatia. Tudo ótimo.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>João R., no Google</footer></blockquote>
+        <blockquote class="quote"><p>Tendo uma bebé, disponibilizaram desde logo um sítio onde se pode estar à vontade com o carrinho, sem ser necessário pedir.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Nee S., no Google</footer></blockquote>
+        <blockquote class="quote"><p>Não tínhamos reservado mesa no dia dos namorados e, apesar de estarem com as mesas todas reservadas, serviram à mesma.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Andreia S., no Google</footer></blockquote>
+        <blockquote class="quote"><p>Bom ambiente, boa comida, qualidade e saborosa, preço acessível. Adorei os hambúrgueres.</p><footer><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span>Kevin S., no Google</footer></blockquote>
       </div>
+      <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=Pizzaria+Soares+Cabe%C3%A7a+Santa+Penafiel" target="_blank" rel="noopener">Ler todas as avaliações no Google ↗</a>
     </div>
   </section>
 
-  <section class="sec visit" id="visitar" aria-labelledby="visitar-title">
+  <section class="sec paper visit" id="visitar" aria-labelledby="visitar-title">
     <div class="wrap">
-      <div class="grid">
-        <div>
-          <h2 class="sec-title" id="visitar-title">Horário</h2>
+      <div class="sec-head">
+        <p class="eyebrow">Visite-nos</p>
+        <h2 class="sec-title" id="visitar-title">Horário e morada</h2>
+      </div>
+      <div class="visit-grid">
+        <div class="card">
+          <h3>Horário</h3>
           <p class="status" data-status hidden></p>
           <ul class="hours" id="hours">
             <li data-d="1"><b>Segunda</b><span class="h">11h30 às 15h30</span></li>
@@ -157,19 +154,18 @@
             <li data-d="0"><b>Domingo</b><span class="h">11h30 às 22h30</span></li>
           </ul>
         </div>
-        <div class="contact">
-          <h2 class="sec-title">Onde estamos</h2>
+        <div class="card contact">
+          <h3>Onde estamos</h3>
           <p class="addr">Edifício Alegria<br>Avenida de Cabeça Santa 409<br>4575-998 Penafiel<span>Com parque de estacionamento</span></p>
           <a class="tel" href="tel:+351913260657"><b>913 260 657</b><span>Reservas, entregas e takeaway</span></a>
           <a class="tel" href="tel:+351255612600"><b>255 612 600</b><span>Telefone fixo</span></a>
-          <div class="chips"><span>Entregas ao domicílio</span><span>Takeaway</span><span>Menu infantil</span><span>Prato do dia</span></div>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Pizzaria+Soares+Cabe%C3%A7a+Santa+Penafiel" target="_blank" rel="noopener">Como chegar</a>
+          <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=Pizzaria+Soares+Cabe%C3%A7a+Santa+Penafiel" target="_blank" rel="noopener">Como chegar</a>
         </div>
-      </div>
-      <div class="map" id="map">
-        <div class="map-consent">
-          <p>O mapa é do Google Maps, que pode guardar cookies no seu dispositivo.</p>
-          <button class="btn btn-ghost" type="button" id="loadMap">Mostrar mapa</button>
+        <div class="map" id="map">
+          <div class="map-consent">
+            <p>O mapa é do Google Maps, que pode guardar cookies no seu dispositivo.</p>
+            <button class="btn btn-dark" type="button" id="loadMap">Mostrar mapa</button>
+          </div>
         </div>
       </div>
     </div>
@@ -177,8 +173,9 @@
 
   <section class="order" aria-label="Encomendar">
     <div class="wrap">
-      <h2>Fica em casa hoje? Nós levamos.</h2>
-      <div class="btns"><a class="btn" href="tel:+351913260657"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>913 260 657</a><a class="btn btn-ghost" href="tel:+351255612600">255 612 600</a></div>
+      <img src="img/logo.jpg" alt="" width="120" height="120" loading="lazy">
+      <h2>Fica em casa hoje?<br><em>Nós levamos.</em></h2>
+      <div class="btns"><a class="btn btn-gold" href="tel:+351913260657"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>913 260 657</a><a class="btn btn-line" href="tel:+351255612600">255 612 600</a></div>
     </div>
   </section>
 </main>
@@ -189,6 +186,12 @@
     <nav aria-label="Ligações legais"><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a><a href="privacidade.html">Privacidade</a><a href="https://www.instagram.com/pizzaria__soares/" target="_blank" rel="noopener">Instagram</a></nav>
   </div>
 </footer>
+
+<nav class="dock" aria-label="Ações rápidas">
+  <a href="tel:+351913260657" class="dock-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Ligar</a>
+  <a href="#ementa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3"/></svg>Ementa</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Pizzaria+Soares+Cabe%C3%A7a+Santa+Penafiel" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Direções</a>
+</nav>
 <script src="js/main.js" defer></script>
 </body>
 </html>

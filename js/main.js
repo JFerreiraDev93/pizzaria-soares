@@ -84,15 +84,18 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
   const keys = Object.keys(MENU);
   function render(cat, focus) {
     let cols = 0;
+    board.classList.toggle("wide", !MENU[cat].some(r => r[0] === "cols"));
     board.innerHTML = MENU[cat].map(r => {
       if (r[0] === "h") return `<h3>${esc(r[1])}</h3>`;
       if (r[0] === "note") return `<p class="note">${esc(r[1])}</p>`;
       if (r[0] === "cols") { cols = r[1].length; return `<div class="row head c${cols}"><span></span>${r[1].map(c => `<span class="p">${esc(c)}</span>`).join("")}</div>`; }
       const prices = r[2].split("|").map(x => x.trim());
-      const pc = prices.length > 1 ? prices.map(x => `<span class="p">${esc(x)}</span>`).join("")
-        : (cols ? `<span class="p span">${esc(prices[0])}</span>` : `<span class="p">${esc(prices[0])} €</span>`);
-      const c = prices.length > 1 || cols ? ` c${cols || prices.length}` : "";
-      return `<div class="row${c}"><span class="n">${esc(r[0])}${r[1] ? `<small>${esc(r[1])}</small>` : ""}</span>${pc}</div>`;
+      const d = r[1] ? `<small class="d${r[1] === "Novidade" ? " new" : ""}">${esc(r[1])}</small>` : "";
+      if (prices.length > 1 || cols) {
+        const pc = prices.length > 1 ? prices.map(x => `<span class="p">${esc(x)}</span>`).join("") : `<span class="p span">${esc(prices[0])}</span>`;
+        return `<div class="row multi c${cols || prices.length}"><span class="n">${esc(r[0])}${d}</span>${pc}</div>`;
+      }
+      return `<div class="row"><span class="n">${esc(r[0])}</span><i class="dots" aria-hidden="true"></i><span class="p">${esc(prices[0])} €</span>${d}</div>`;
     }).join("");
     [...tabs.children].forEach(b => {
       const on = b.dataset.cat === cat;
@@ -112,6 +115,8 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
     tabs.appendChild(b);
   });
   render(keys[0]);
+  /* Cartões "favoritos" abrem a categoria certa */
+  document.querySelectorAll("[data-cat]").forEach(a => { if (a.tagName === "A") a.addEventListener("click", () => render(a.dataset.cat)); });
 })();
 
 /* Aberto agora (hora de Lisboa) */
@@ -147,14 +152,6 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
   document.addEventListener("keydown", e => { if (e.key === "Escape") set(false); });
 })();
 
-/* Carrossel de avaliações */
-(function reviews() {
-  const rail = $("#rail"); if (!rail) return;
-  const step = () => rail.querySelector(".review").getBoundingClientRect().width + 16;
-  $("#revPrev").addEventListener("click", () => rail.scrollBy({ left: -step(), behavior: "smooth" }));
-  $("#revNext").addEventListener("click", () => rail.scrollBy({ left: step(), behavior: "smooth" }));
-})();
-
 /* Mapa: só carrega o Google Maps depois de o visitante aceitar (RGPD) */
 (function map() {
   const btn = $("#loadMap"); if (!btn) return;
@@ -166,11 +163,5 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
     $("#map").replaceChildren(f);
   });
 })();
-
-/* Copiar número */
-document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
-  const done = () => { b.textContent = "Copiado"; setTimeout(() => (b.textContent = "Copiar"), 1600); };
-  navigator.clipboard?.writeText(b.dataset.copy).then(done).catch(() => {});
-}));
 
 $("#year") && ($("#year").textContent = new Date().getFullYear());
