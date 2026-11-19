@@ -2,7 +2,7 @@
    Para alterar preços ou pratos, edite apenas o objeto MENU abaixo.
    Linha normal: [nome, descrição, preço]  ·  ["h", "Título"]  ·  ["note", "Texto pequeno"] */
 const MENU = {
-  "Pizzas": [["note", "Preços por tamanho: pequena · média · familiar"],
+  "Pizzas": [["cols", ["Pequena", "Média", "Familiar"]],
     ["Margarita", "Tomate, queijo e orégãos", "9,50 | 11,50 | 15,00"],
     ["Prosciutto", "Tomate, queijo, fiambre e orégãos", "9,50 | 11,50 | 15,50"],
     ["Prosciutto c/ cogumelos", "Tomate, queijo, fiambre, cogumelos e orégãos", "10,00 | 12,00 | 16,00"],
@@ -24,7 +24,7 @@ const MENU = {
     ["Calzone da Casa", "Fechada: tomate, queijo, fiambre, carne à bolonhesa, chouriço, salsicha picante e orégãos", "11,00 | 13,00 | 17,00"],
     ["Atlântica", "Tomate, queijo, camarão, delícias do mar, mexilhão, miolo de camarão, ananás e orégãos", "12,00 | 15,00 | 18,00"],
     ["Kebab", "Tomate, queijo, carne kebab, molho pita e orégãos", "12,00 | 14,00 | 18,00"]],
-  "Hambúrgueres": [["note", "Todos incluem batata frita · pão brioche, bolo do caco ou pita"],
+  "Hambúrgueres": [["note", "Todos com batata frita. Pão brioche, bolo do caco ou pita, à escolha."],
     ["Penafiel", "100 g de carne de novilho, ketchup e maionese", "8,50"],
     ["Porto", "100 g de carne de novilho, queijo cheddar, ketchup e maionese", "9,00"],
     ["Lisboa", "140 g de carne de novilho, cheddar, bacon, alface, tomate, ketchup e maionese", "11,50"],
@@ -52,7 +52,7 @@ const MENU = {
     ["h", "Saladas"], ["Mista", "", "4,00"], ["Atum", "", "10,00"], ["Frango", "", "10,00"],
     ["Caesar", "", "10,00"], ["Marisco", "", "11,00"], ["Salmão", "", "13,00"],
     ["h", "Omeletes"], ["Queijo ou fiambre", "", "8,00"], ["Mista", "", "9,00"], ["Presunto e queijo", "", "10,00"]],
-  "Fim de semana": [["note", "Dose · travessa"],
+  "Fim de semana": [["note", "Ao sábado e domingo."], ["cols", ["Dose", "Travessa"]],
     ["h", "Peixe"], ["Bacalhau Zé do Pipo", "", "21,00 | 39,00"], ["Bacalhau c/ broa", "", "21,00 | 39,00"], ["Bacalhau à Narcisa", "", "21,00 | 39,00"],
     ["h", "Carne"], ["Lombo", "", "12,50 | 24,00"], ["Vitela", "", "12,50 | 24,00"], ["Cabrito", "", "18,00 | 35,00"],
     ["Cozido", "", "18,00 | 35,00"], ["Bife c/ molho de cogumelos", "", "14,00 | 26,00"],
@@ -83,10 +83,16 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
   if (!tabs || !board) return;
   const keys = Object.keys(MENU);
   function render(cat, focus) {
+    let cols = 0;
     board.innerHTML = MENU[cat].map(r => {
       if (r[0] === "h") return `<h3>${esc(r[1])}</h3>`;
-      if (r[0] === "note") return `<div class="sizes">${esc(r[1])}</div>`;
-      return `<div class="item"><span class="n">${esc(r[0])}</span><span class="p">${esc(r[2])} €</span>${r[1] ? `<span class="d">${esc(r[1])}</span>` : ""}</div>`;
+      if (r[0] === "note") return `<p class="note">${esc(r[1])}</p>`;
+      if (r[0] === "cols") { cols = r[1].length; return `<div class="row head c${cols}"><span></span>${r[1].map(c => `<span class="p">${esc(c)}</span>`).join("")}</div>`; }
+      const prices = r[2].split("|").map(x => x.trim());
+      const pc = prices.length > 1 ? prices.map(x => `<span class="p">${esc(x)}</span>`).join("")
+        : (cols ? `<span class="p span">${esc(prices[0])}</span>` : `<span class="p">${esc(prices[0])} €</span>`);
+      const c = prices.length > 1 || cols ? ` c${cols || prices.length}` : "";
+      return `<div class="row${c}"><span class="n">${esc(r[0])}${r[1] ? `<small>${esc(r[1])}</small>` : ""}</span>${pc}</div>`;
     }).join("");
     [...tabs.children].forEach(b => {
       const on = b.dataset.cat === cat;
@@ -119,12 +125,12 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;",
   const fmt = m => `${Math.floor(m / 60)}h${String(m % 60).padStart(2, "0")}`;
   const today = HOURS[now.d];
   let open = false, text;
-  if (today && now.m >= today[0] && now.m < today[1]) { open = true; text = `Aberto agora · fecha às ${fmt(today[1])}`; }
+  if (today && now.m >= today[0] && now.m < today[1]) { open = true; text = `Aberto agora, fecha às ${fmt(today[1])}`; }
   else {
     for (let i = 0; i < 8; i++) {
       const d = (now.d + i) % 7, h = HOURS[d];
       if (!h || (i === 0 && now.m >= h[0])) continue;
-      text = `Fechado · abre ${i === 0 ? "hoje" : i === 1 ? "amanhã" : DAY[d]} às ${fmt(h[0])}`; break;
+      text = `Fechado, abre ${i === 0 ? "hoje" : i === 1 ? "amanhã" : DAY[d]} às ${fmt(h[0])}`; break;
     }
   }
   document.querySelectorAll("[data-status]").forEach(el => { el.textContent = text; el.classList.add(open ? "open" : "closed"); el.hidden = false; });
