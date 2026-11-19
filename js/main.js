@@ -174,3 +174,11 @@ document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () =
 }));
 
 $("#year") && ($("#year").textContent = new Date().getFullYear());
+
+/* Cabeçalho sólido ao fazer scroll */
+(function header() {
+  const top = $("#top"); if (!top) return;
+  const on = () => top.classList.toggle("solid", window.scrollY > 40 || $("#navLinks")?.classList.contains("open"));
+  on(); window.addEventListener("scroll", on, { passive: true });
+  $("#menuBtn")?.addEventListener("click", () => setTimeout(on, 0));
+})();
